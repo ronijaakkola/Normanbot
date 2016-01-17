@@ -1,8 +1,8 @@
 {
-  "name": "normanbot",
-  "version": "1.0.0",
-  "description": "A simple Discord bot utilizing unofficial discord.js API.",
-  "main": "app.js",
+  "name": "Normanbot",
+  "version": "0.0.1",
+  "description": "Simple Discord bot allowing adding new commands as plugins with ease.",
+  "main": "index.js",
   "dependencies": {
     "babel-cli": "^6.4.0",
     "babel-preset-es2015": "^6.3.13",
@@ -15,11 +15,17 @@
   "devDependencies": {},
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ronijaakkola/Normanbot.git"
   },
   "keywords": [
-    "bot"
+    "bot",
+    "Discord"
   ],
   "author": "Roni Jaakkola",
-  "license": "ISC"
+  "license": "ISC",
+  "homepage": "https://github.com/ronijaakkola/Normanbot#readme"
 }
