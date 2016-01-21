@@ -3,8 +3,9 @@
 import chalk from 'chalk';
 import Discord from 'discord.js'
 
-var auth = require("./config/auth.json");
-var config = require("./config/config.json");
+import auth from "./config/auth.json";
+import config from "./config/config.json";
+
 var commands = require("./plugins");
 
 var bot = new Discord.Client();
@@ -27,12 +28,17 @@ bot.on("message", function(msg) {
     let params = msg.content.substring(command.length + 2);
     let cmd = commands.default[command];
 
-    console.log("Command: " + command);
-    console.log("Parameter(s): " + params);
+    //console.log("Command: " + command);
+    //console.log("Parameter(s): " + params);
 
     // If command was found from the plugins, call its function
     if (cmd) 
       cmd.func(bot, msg, params);
+  }
+  // See if the name of the bot was mentioned
+  else if (msg.isMentioned(bot.user)) {
+    console.log(chalk.cyan('Bot mentioned!'));
+    bot.sendMessage(msg.channel, "Joku taisi mainita minut, Donald Normanin!");
   }
 });
 
